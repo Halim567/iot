@@ -1,8 +1,7 @@
-import connect from 'mysql2/promise';
+import { drizzle } from 'drizzle-orm/postgres-js';
+import postgres from 'postgres';
+import { PRIVATE_DATABASE_URL } from '$env/static/private';
 
-export const mysql = await connect.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'iot'
-});
+const connectionString = PRIVATE_DATABASE_URL;
+const client = postgres(connectionString)
+export const db = drizzle(client);

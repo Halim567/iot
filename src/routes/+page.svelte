@@ -2,8 +2,6 @@
 	import type { PageData } from "./$types";
 
 	export let data: PageData;
-
-    console.log(data.data_tabel);
 </script>
 
 <table>
@@ -23,4 +21,4 @@
             </tr>
         {/each}
     </tbody>
-  </table>
+</table>
